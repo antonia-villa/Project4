@@ -2,6 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   var datasets = sequelize.define('datasets', {
     dataset_id: DataTypes.STRING,
+    category: DataTypes.TEXT,
     name: DataTypes.TEXT
   }, {
     classMethods: {
