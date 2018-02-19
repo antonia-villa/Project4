@@ -20,7 +20,7 @@ var data = d3.map();
 
 // used to asynchronously load topojson maps and data
 d3.queue()
-.defer(d3.json, "./maps/us_state.json") // load in topoJSON map data
+.defer(d3.json, "./maps/us_county.json") // load in topoJSON map data
 // .defer() // load in data
 .await(ready) // create callback function
 
