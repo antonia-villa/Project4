@@ -9,14 +9,24 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "d3": "^4.13.0",
+    "d3-array": "^1.2.1",
+    "d3-geo-projection": "^2.3.2",
     "dotenv": "^5.0.0",
+    "ejs": "^2.5.7",
     "express": "^4.16.2",
     "express-ejs-layouts": "^2.3.1",
+    "jsdom": "^11.6.2",
+    "ndjson-cli": "^0.3.1",
     "path": "^0.12.7",
     "pg": "^7.4.1",
     "pg-hstore": "^2.3.2",
     "request": "^2.83.0",
     "sequelize": "^4.33.4",
-    "sequelize-cli": "^4.0.0"
+    "sequelize-cli": "^4.0.0",
+    "shapefile": "^0.6.6",
+    "topojson": "^3.0.2",
+    "topojson-client": "^3.0.0",
+    "topojson-simplify": "^3.0.2"
   }
 }
