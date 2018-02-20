@@ -11,18 +11,44 @@
 //   .attr("width", width )
 //   .attr("height", height)
 
+// Retrieve data from API
+var rawData = dataSet
+
+// Define funcitons to find min and max of data set
+var minValue = getMin(rawData)
+var maxValue = getMax(rawData)
+var step = (maxValue-minValue)/7
+
+
+// create color range based on Min,Max and Step Value
+var employment_domain = [minValue,0,0,0,0,0,0,0];
+for(var i=1; i< employment_domain.length; i++){
+  var tmp = (employment_domain[i-1] + step)
+  employment_domain[i]= tmp
+}
+console.log('domain', employment_domain)
+
+var employment_color = d3.scaleThreshold()
+  .domain(employment_domain)
+  .range(d3.schemeBlues[7])
+
+
 var svg = d3.select("svg");
 var path = d3.geoPath();
 
 // Create variable to hold data 
 // Dictionary of key value pairs {id: value} --> {censusBlockID: value}
-var data = d3.map();
+var employmentData = d3.map();
 
 // used to asynchronously load topojson maps and data
 d3.queue()
-.defer(d3.json, "../maps/wa_counties.json") // load in topoJSON map data
-// .defer() // load in data
-.await(ready) // create callback function
+  .defer(d3.json, "../maps/wa_counties.json") // load in topoJSON map data
+  //
+  .defer(rawData, function(d){
+    console.log('d',d)
+    employmentData.set(d.county_TR_code, +d.value) // (first refers to county code, second refers to employment value)
+  } ) // load in data
+  .await(ready) // create callback function
 
 // Callback function
 function ready(error, data){
@@ -49,7 +75,9 @@ function ready(error, data){
       .enter()
       .append("path")
       .attr("d", geoPath) // pass in geoPath object created
-      .attr("fill", "blue") // fill in the data
+      .attr("fill", function(d){
+        return employment_color(d.value = employmentData.get(d.properties.GEOID)); // pass in employement value and ID from topoJSON map
+      }) // fill in the data
 
 
 }
