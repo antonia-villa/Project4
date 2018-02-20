@@ -1,4 +1,4 @@
-var county_ids = require('./county_ids.js');
+var county_codes = require('./county_ids.js');
 
 // Format Raw API Data for data visuals
 module.exports = {
@@ -47,22 +47,35 @@ module.exports = {
 		  var county_level =[];
 		  var county_code;
 		  
+		  // Remove beginning of object including dimension data
 		  function findStart(element){
 		    var size = Object.keys(element).length;
 		    return size === 3;
 		  }
-		  
 		  var removeIndex = data.findIndex(findStart)
 		  data.splice(0,16)
 		  
+		  // Loop through data to create new dataset
 		  data.forEach(function(item){
-		      if (Object.keys(item).length >2){
+		  	// extract county code
+		      if (item.L != undefined){
 		        county_code = item.L.split(':')[4]
 		      } else{
+		      		
+		      // Select data for year 2015			    
 		      if(item.I == 'Y1:2015'){
-		        var child = {county: county_code, year:item.I.split(':')[1], value: item.V}
-		        county_level.push(child)
-		        county_code = '';
+		      	if(typeof county_code !== "undefined" || county_code === ''){
+
+		      		// Select county data from county reference documentation
+		      		var county_object = county_codes.county_codes.find(function(element) {
+		          		return element.county_code === county_code;
+		        	});
+
+		      		// create object
+			      	var child = {county: county_code, county_name: county_object.county_name, county_TR_code: county_object.county_TR_code, year:item.I.split(':')[1], value: item.V}
+			        county_level.push(child)
+			        county_code = '';
+		      	}    
 		      }
 		      
 		    }

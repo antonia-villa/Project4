@@ -12,3 +12,10 @@
 		</div>
 	</div>
 </div>
+
+<script>
+	var rawdata = <%- JSON.stringify(dataSet) %>;
+	var dataAttributes = rawdata[0];
+	var dataSet = rawdata[1];
+	console.log(dataAttributes)
+</script>

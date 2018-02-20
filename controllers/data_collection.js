@@ -6,7 +6,7 @@ var db = require("../models");
 var sequelize = require('sequelize')
 var router = express.Router();
 var request = require('request');
-var county_ids = require('./county_ids.js');
+
 
 
 //SLIDV Data
@@ -26,12 +26,13 @@ router.get('/home', function(req, res){
         	
         	var obj=JSON.parse(body);
 			var data=JSON.parse(JSON.stringify(obj));
-			var observations = data.results.observations
-			console.log(observations)
-			console.log('county_ids',county_ids.county_ids)
-        	// var observations = dataCleanse.state_data(data.results.observations);
-        	// console.log('observations', observations)
-        	// res.render('main/home');
+			
+			// retrieve data set
+			var data_attributes = {name: data.results.study.name, description: data.results.study.description}
+        	var observations = dataCleanse.county_level(data.results.observations);
+        	
+        	var dataSet = [data_attributes, observations]
+        	res.render('main/home', {dataSet: dataSet});
      	}
 })
 
