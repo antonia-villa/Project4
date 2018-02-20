@@ -30,8 +30,10 @@ router.get('/home', function(req, res){
 			// retrieve data set
 			var data_attributes = {name: data.results.study.name, description: data.results.study.description}
         	var observations = dataCleanse.county_level(data.results.observations);
-        	
+        	console.log(observations)
+
         	var dataSet = [data_attributes, observations]
+
         	res.render('main/home', {dataSet: dataSet});
      	}
 })

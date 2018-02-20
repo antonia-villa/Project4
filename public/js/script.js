@@ -28,9 +28,14 @@ for(var i=1; i< employment_domain.length; i++){
 }
 console.log('domain', employment_domain)
 
+// var employment_color = d3.scaleThreshold()
+//   .domain(employment_domain)
+//   .range(d3.schemeBlues[7])
+
+
 var employment_color = d3.scaleThreshold()
-  .domain(employment_domain)
-  .range(d3.schemeBlues[7])
+    .domain(d3.range(2, 10))
+    .range(d3.schemeBlues[9]);
 
 
 var svg = d3.select("svg");
@@ -42,15 +47,15 @@ var employmentData = d3.map();
 
 // used to asynchronously load topojson maps and data
 d3.queue()
-  .defer(d3.json, "../maps/wa_counties.json") // load in topoJSON map data
+  .defer(d3.json, "../maps/all_washington_counties.json") // load in topoJSON map data
   //
-  .defer(rawData, function(d){
-    console.log('d',d)
-    employmentData.set(d.county_TR_code, +d.value) // (first refers to county code, second refers to employment value)
-  } ) // load in data
-  .await(ready) // create callback function
+  .defer(d3.csv, "../js/unemployment_data.csv", function(d){
+    employmentData.set(d.county_TR_code, +d.value)
+  })
+  .await(ready) // create callback function 
 
 // Callback function
+// data refers to everything being passed from d3.queue
 function ready(error, data){
   if (error) throw error;
 
@@ -58,7 +63,7 @@ function ready(error, data){
   // used to refer to the features of the county data
   var county_data = topojson.feature(data, {
     type:"GeometryCollection",
-    geometries: data.objects.tl_2016_53_tract.geometries
+    geometries: data.objects.washing_counties.geometries
   });
 
   // identify projection and path
@@ -66,7 +71,7 @@ function ready(error, data){
     .fitExtent([[20,20], [460, 580]], county_data) // assigns ([padding], [width and height], dataObject)
 
     // define path
-    var geoPath = d3.geoPath()
+  var geoPath = d3.geoPath()
       .projection(projection)
 
     // draw map
@@ -75,9 +80,10 @@ function ready(error, data){
       .enter()
       .append("path")
       .attr("d", geoPath) // pass in geoPath object created
-      .attr("fill", function(d){
-        return employment_color(d.value = employmentData.get(d.properties.GEOID)); // pass in employement value and ID from topoJSON map
-      }) // fill in the data
+      .attr("fill", function(d) { return employment_color(d.value = employmentData.get(d.county_TR_code)); })
+      // .attr("fill", function(d){
+      //   return employment_color(d.value = employmentData.get(d.properties.GEOID)); // pass in employement value and ID from topoJSON map
+      // }) // fill in the data
 
 
 }
