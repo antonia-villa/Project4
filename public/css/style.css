@@ -3,6 +3,8 @@ margin: 0;
 font-family: "proxima-nova", "Source Sans Pro", sans-serif;
 }
 
+.nv-y .tick line { display: none; }
+
 
 h1 {
 font-size: 24px;
