@@ -41,90 +41,89 @@ function barChartVisual(event){
 		  item.percent = (Number(item.value)/total).toFixed(2)
 		})
 
-		var formatPercent = d3.format(".0%");
+		// sort bars based on value
+		data = data.sort(function(a,b){
+			return d3.descending(a.value, b.value)
+		})
+		console.log(data)
+		//set up svg using margin 
+        var margin = {
+            top: 15,
+            right: 25,
+            bottom: 15,
+            left: 60
+        };
 
-	    margin = {top: 20, right: 20, bottom: 40, left: 120},
-	    width = 500 - margin.left - margin.right,
-	    height = 400 - margin.top - margin.bottom;
+        var width = 400 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
 
+		 var svg2 = d3.select("#d3_visual2").append("svg")
+		            .attr("width", width + margin.left + margin.right)
+		            .attr("height", height + margin.top + margin.bottom)
+		            .append("g")
+		            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 		
-	    // set ranges
-	    var x = d3.scaleLinear()
-          .range([0, width]);
-    	var y = d3.scaleBand()
-        	.range([height, 0]);
-    	var xAxis = d3.axisBottom(x)
-        	.ticks(10, "%");
-        var yAxis = d3.axisLeft(y);
-	    
-	    
-
-	    var svg2 = d3.select("#d3_visual2").append("svg")
-	    //***EDIT***
-	    //the data method returns the enter collection and your not ready for it yet...
-	    //.data(root)
-	    .attr("width", width + margin.left + margin.right)
-	    .attr("height", height + margin.top + margin.bottom)
-	    .append("g")
-	    .attr("transform","translate(" + margin.left + "," + margin.top + ")");
-
-	    data.forEach(function (d) {
-	        d.percent = +d.percent
-	        d.dimension_desc = d.dimension_desc
-	    });
-
-	      // Scale the range of the data in the domains
-  		x.domain([0, d3.max(data, function(d){ return d.percent; })])
-  		y.domain(data.map(function(d) { return d.dimension_desc; }))
-  			.paddingInner(0.1)
-        	.paddingOuter(0.5);
+//		var tooltip = d3.select("body").append("div").attr("class", "toolTip");
 
 
+		var x = d3.scaleLinear()
+				.range([0, width])
+				.domain([0, d3.max(data, function (d) {
+                return d.percent;
+            })]);
 
-		  // append the rectangles for the bar chart
-		  svg2.selectAll(".bar")
-		      .data(data)
-		    .enter().append("rect")
-		    	.attr("class", "bar")
-		    	.attr("x", 0)
-		    	.attr("height", y.bandwidth())
-		     	.attr("y", function(d) { 
-		     		return y(d.dimension_desc) })
-		     	.attr("width", function(d) {return x(d.percent); } );
-		     	
-		    // svg2.append("text")
-      //       .attr("x", 0)
-      //       .attr("y", function(d) { 
-		    //  		return y(d.dimension_desc) })
-      //       .attr("dy", ".35em")
-      //       .text(function(d) { return d.dimension_desc; })
-      //       .style("fill", "red");
+		var y = d3.scaleBand()
+				.range([height, 0])
+				.padding(.02)
+				.domain(data.map(function (d) {
+                return d.dimension_desc;
+            }));
 
-		 // svg2.append("text")
-   //          .attr("class", "value")
-   //       //    .attr("y", function(d) { 
-		 //     		// return y(d.dimension_desc) })
-   //          .attr("dx", '.1em') //margin right
-   //          .attr("dy", ".35em") //vertical align middle
-   //          .attr("text-anchor", "end")
-   //          .text(function(d){
-   //          	console.log(d)
-   //              return y(d.dimension_desc);
-   //          });
-   //          // .attr("x", function(d){
-   //          //     var width = this.getBBox().width;
-   //          //     return Math.max(width + valueMargin, scale(d.value));
-   //          // });
+		 //make y axis to show bar names
+        var yAxis = d3.axisLeft(y)
+            //no tick marks
+            .tickValues([]);
+       
+
+        var gy = svg2.append("g")
+            .attr("class", "y axis")
+            .call(yAxis)
 
 
-		  // add the x Axis
-		  svg2.append("g")
-		      .attr("transform", "translate(0," + height + ")")
-		      .call(d3.axisBottom(x));
+        var bars = svg2.selectAll(".bar")
+            .data(data)
+            .enter()
+            .append("g")
 
-		  // add the y Axis
-		  svg2.append("g")
-		  		.attr("transform", "translate(120,0)")
-		      .call(d3.axisLeft(y));
+
+        //append rects
+        bars.append("rect")
+            .attr("class", "bar")
+            .attr("y", function (d) {
+                return y(d.dimension_desc);
+            })
+            .attr("height", y.bandwidth())
+            .attr("x", 0)
+            .attr("width", function (d) {
+                return x(d.percent);
+            });
+
+	    //add a value label to the right of each bar
+        bars.append("text")
+            .attr("class", "label")
+            //y position of the label is halfway down the bar
+            .attr("y", function (d) {
+                return y(d.dimension_desc) + y.bandwidth() / 2 + 4;
+            })
+            //x position is 3 pixels to the right of the bar
+            .attr("x", function (d) {
+                return x(d.percent) - 10;
+            })
+            .text(function (d) {
+                return d.dimension_desc;
+            })
+            .style("fill", "red");
+
+
 	}
 }
