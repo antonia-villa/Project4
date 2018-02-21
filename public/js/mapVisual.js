@@ -91,8 +91,8 @@ function ready(error, data){
       .append("path")
       .attr("d", geoPath) // pass in geoPath object created
       .attr("id", function(d) { return d.properties.GEOID })
-      .attr("onmouseover", "barChartVisual(event)")
-      .attr("onmouseout", "barChartIDClear(event)")
+      .attr("onclick", "barChartVisual(event)")
+      // .attr("onmouseout", "barChartIDClear(event)")
       .attr("fill", function(d) { return employment_color(d.value = employmentData.get(d.properties.GEOID)); })
    .attr("d", geoPath)
             .on("mouseover", function(d){

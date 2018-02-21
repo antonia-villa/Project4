@@ -1,12 +1,14 @@
 var dataObject = treeData(rawData)
+console.log(dataObject)
 var county_code;
 
 function barChartIDClear(event){
 	county_code  = ''
-	$('#d3_visual2').remove();
+	$('#viz2_container').remove();
 }
 
 function barChartVisual(event){
+	$('#viz2_container').remove();
 
 	// Retrieve Corresponding county code
     county_code = event.target.id
@@ -14,19 +16,46 @@ function barChartVisual(event){
     // Extract data
 	var dataObject2 = dataObject.find(function(element) {
 		if(String(element.county) === String(county_code)){
+			console.log(element.data)
 			return element.data;
 		}
 	});
+	console.log('object2', dataObject2)
 
 	// Check to see if data exists for county
 	if(dataObject2){
-
-		// Build Visual
-		$('#visual2').append('<div id="d3_visual2"></div>');
+		// Select county Name for header
+		var county_info = county_ref.find(function(element) {
+    		    return element.county_TR_code === String(county_code);
+    	});
+		
+		var county_name = county_info.county_name
 
 		// Extract Only Data from object return
 		var data = dataObject2.data
 		var colors = ['#0000b4','#0082ca','#0094ff','#0d4bcf','#0066AE','#074285','#00187B','#285964','#405F83','#416545','#4D7069','#6E9985','#7EBC89','#0283AF','#79BCBF','#99C19E'];
+
+
+		// Fixed Data Lables
+		data.forEach(function(item){
+		  if(item.dimension_desc.includes("Enrolled")){
+		    item.dimension_desc = item.dimension_desc.replace('Enrolled in ', '')
+		    if(item.dimension_desc.includes("grade")){
+		      item.dimension_desc = 'Grade: '+ item.dimension_desc.replace(/grade /g, '')
+		    }
+		  }
+		})
+		
+
+		// Removed Enrolled in School total
+		var enrolled_total;
+		for(var i=0; i<data.length; i++){
+  			if(data[i].dimension_desc.replace(/\s+/g, '') === "school"){
+      	enrolled_total = data.splice(i, 1)
+  			}
+		}
+
+		console.log(enrolled_total);
 
 		// Add in % of Total
 		var total = 0;
@@ -36,7 +65,6 @@ function barChartVisual(event){
 		  	}
 		})
 
-
 		data.forEach(function(item){
 		  item.percent = (Number(item.value)/total).toFixed(2)
 		})
@@ -45,7 +73,17 @@ function barChartVisual(event){
 		data = data.sort(function(a,b){
 			return d3.descending(a.value, b.value)
 		})
-		console.log(data)
+
+		var enrolled_percent = Math.floor((Number(enrolled_total[0].value)/total)*100)
+		
+
+		// Build Visual
+		$('#d3_visual2').append('<div id="viz2_container"></div>');
+		$('#viz2_container').append('<h1>'+county_name+'</h1>');
+		$('#viz2_container').append('<p> Of the <strong>'+total+'</strong> census respondents in 2015, '+enrolled_percent+'% reported enrollment in school.</p>')
+
+
+
 		//set up svg using margin 
         var margin = {
             top: 15,
@@ -57,7 +95,7 @@ function barChartVisual(event){
         var width = 400 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
-		 var svg2 = d3.select("#d3_visual2").append("svg")
+		 var svg2 = d3.select("#viz2_container").append("svg")
 		            .attr("width", width + margin.left + margin.right)
 		            .attr("height", height + margin.top + margin.bottom)
 		            .append("g")
@@ -94,6 +132,7 @@ function barChartVisual(event){
             .data(data)
             .enter()
             .append("g")
+            .style("fill", function(d, i) { return colors[i]; })
 
 
         //append rects
@@ -116,13 +155,11 @@ function barChartVisual(event){
                 return y(d.dimension_desc) + y.bandwidth() / 2 + 4;
             })
             //x position is 3 pixels to the right of the bar
-            .attr("x", function (d) {
-                return x(d.percent) - 10;
-            })
+            .attr("x", 0)
             .text(function (d) {
                 return d.dimension_desc;
             })
-            .style("fill", "red");
+            .style("fill", "black");
 
 
 	}
