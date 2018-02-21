@@ -120,7 +120,7 @@ module.exports = {
 // Education Data
 ////////////////////////////////////////////////////////////////////////////////////
 
-county_educationData: function(data){
+county_educationData: function(data, referenceCodes){
   	var county_level =[];
 	var county_code;
 	var dimension;
@@ -145,12 +145,18 @@ county_educationData: function(data){
     		          		return element.county_code === county_code;
     		        	});
 
+    		        	// Selection Education Dimension from referenceCodes input
+    		        	var dimension_code = referenceCodes.find(function(element){
+    		        		return element.id === dimension
+    		        	});
+
     		        	// create object
 		                  var child = {	
 		                  				county: county_code, 
 		                  				county_name: county_object.county_name, 
 		                  				county_TR_code: county_object.county_TR_code, 
 		                  				dimension: dimension, 
+		                  				dimension_desc: dimension_code.name,
 		                  				year:item.I.split(':')[1], 
 		                  				value: item.V}
     		      		

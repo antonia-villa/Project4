@@ -57,9 +57,9 @@ var employmentData = d3.map();
 
 // used to asynchronously load topojson maps and data
 d3.queue()
-  .defer(d3.json, "../maps/all_washington_counties.json") // load in topoJSON map data
+  .defer(d3.json, "../maps/washington_counties.json") // load in topoJSON map data
   //
-  .defer(d3.csv, "../js/unemployment_data.csv", function(d){
+  .defer(d3.csv, "../rawData/unemployment_data.csv", function(d){
     employmentData.set(d.county_TR_code, +d.value)
   })
   .await(ready) // create callback function 
@@ -94,11 +94,9 @@ function ready(error, data){
       .attr("fill", function(d) { return employment_color(d.value = employmentData.get(d.properties.GEOID)); })
    .attr("d", geoPath)
             .on("mouseover", function(d){
-              console.log(d)
+              
             var xPosition = w/2 + 150;
             var yPosition = h/2;
-//            var xPosition = parseFloat(path.centroid(this).attr("cx"));
-//            var yPosition = parseFloat(path.centroid(this).attr("cy"));
             d3.select("#tooltip")
             .style("left", xPosition + "px")
             .style("top", yPosition + "px");
@@ -118,8 +116,5 @@ function ready(error, data){
             .on("mouseout", function(){
             d3.select("#tooltip").classed("hidden", true);
             });
-   
-
-
 }
 

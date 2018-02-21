@@ -1,0 +1,391 @@
+"county","county_name","county_TR_code","dimension","dimension_desc","year","value"
+"001","Adams","53001","ACS:B14001>1","Total","2015",17801
+"001","Adams","53001","ACS:B14001>1>10","Not enrolled in school","2015",12478
+"001","Adams","53001","ACS:B14001>1>2","Enrolled in school","2015",5323
+"001","Adams","53001","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",323
+"001","Adams","53001","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",488
+"001","Adams","53001","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",1476
+"001","Adams","53001","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",1185
+"001","Adams","53001","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",1348
+"001","Adams","53001","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",433
+"001","Adams","53001","ACS:B14001>1>2>9","Graduate or professional school","2015",70
+"003","Asotin","53003","ACS:B14001>1","Total","2015",21336
+"003","Asotin","53003","ACS:B14001>1>10","Not enrolled in school","2015",16258
+"003","Asotin","53003","ACS:B14001>1>2","Enrolled in school","2015",5078
+"003","Asotin","53003","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",301
+"003","Asotin","53003","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",312
+"003","Asotin","53003","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",1037
+"003","Asotin","53003","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",1011
+"003","Asotin","53003","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",1224
+"003","Asotin","53003","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",1069
+"003","Asotin","53003","ACS:B14001>1>2>9","Graduate or professional school","2015",124
+"005","Benton","53005","ACS:B14001>1","Total","2015",177023
+"005","Benton","53005","ACS:B14001>1>10","Not enrolled in school","2015",128793
+"005","Benton","53005","ACS:B14001>1>2","Enrolled in school","2015",48230
+"005","Benton","53005","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",2839
+"005","Benton","53005","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",2949
+"005","Benton","53005","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",10279
+"005","Benton","53005","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",11301
+"005","Benton","53005","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",11514
+"005","Benton","53005","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",8290
+"005","Benton","53005","ACS:B14001>1>2>9","Graduate or professional school","2015",1058
+"007","Chelan","53007","ACS:B14001>1","Total","2015",71205
+"007","Chelan","53007","ACS:B14001>1>10","Not enrolled in school","2015",53937
+"007","Chelan","53007","ACS:B14001>1>2","Enrolled in school","2015",17268
+"007","Chelan","53007","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",903
+"007","Chelan","53007","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",701
+"007","Chelan","53007","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",3620
+"007","Chelan","53007","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",4683
+"007","Chelan","53007","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",4208
+"007","Chelan","53007","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",2920
+"007","Chelan","53007","ACS:B14001>1>2>9","Graduate or professional school","2015",233
+"009","Clallam","53009","ACS:B14001>1","Total","2015",70423
+"009","Clallam","53009","ACS:B14001>1>10","Not enrolled in school","2015",56391
+"009","Clallam","53009","ACS:B14001>1>2","Enrolled in school","2015",14032
+"009","Clallam","53009","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",938
+"009","Clallam","53009","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",730
+"009","Clallam","53009","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",2670
+"009","Clallam","53009","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",3097
+"009","Clallam","53009","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",3457
+"009","Clallam","53009","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",2772
+"009","Clallam","53009","ACS:B14001>1>2>9","Graduate or professional school","2015",368
+"011","Clark","53011","ACS:B14001>1","Total","2015",428042
+"011","Clark","53011","ACS:B14001>1>10","Not enrolled in school","2015",311217
+"011","Clark","53011","ACS:B14001>1>2","Enrolled in school","2015",116825
+"011","Clark","53011","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",6621
+"011","Clark","53011","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",6769
+"011","Clark","53011","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",25257
+"011","Clark","53011","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",25569
+"011","Clark","53011","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",27052
+"011","Clark","53011","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",22285
+"011","Clark","53011","ACS:B14001>1>2>9","Graduate or professional school","2015",3272
+"013","Columbia","53013","ACS:B14001>1","Total","2015",3876
+"013","Columbia","53013","ACS:B14001>1>10","Not enrolled in school","2015",3101
+"013","Columbia","53013","ACS:B14001>1>2","Enrolled in school","2015",775
+"013","Columbia","53013","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",16
+"013","Columbia","53013","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",7
+"013","Columbia","53013","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",146
+"013","Columbia","53013","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",190
+"013","Columbia","53013","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",229
+"013","Columbia","53013","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",173
+"013","Columbia","53013","ACS:B14001>1>2>9","Graduate or professional school","2015",14
+"015","Cowlitz","53015","ACS:B14001>1","Total","2015",98397
+"015","Cowlitz","53015","ACS:B14001>1>10","Not enrolled in school","2015",75220
+"015","Cowlitz","53015","ACS:B14001>1>2","Enrolled in school","2015",23177
+"015","Cowlitz","53015","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",1485
+"015","Cowlitz","53015","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",1317
+"015","Cowlitz","53015","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",5193
+"015","Cowlitz","53015","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",5527
+"015","Cowlitz","53015","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",5417
+"015","Cowlitz","53015","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",3885
+"015","Cowlitz","53015","ACS:B14001>1>2>9","Graduate or professional school","2015",353
+"017","Douglas","53017","ACS:B14001>1","Total","2015",37994
+"017","Douglas","53017","ACS:B14001>1>10","Not enrolled in school","2015",28304
+"017","Douglas","53017","ACS:B14001>1>2","Enrolled in school","2015",9690
+"017","Douglas","53017","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",369
+"017","Douglas","53017","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",599
+"017","Douglas","53017","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",2632
+"017","Douglas","53017","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",2301
+"017","Douglas","53017","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",2353
+"017","Douglas","53017","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",1336
+"017","Douglas","53017","ACS:B14001>1>2>9","Graduate or professional school","2015",100
+"019","Ferry","53019","ACS:B14001>1","Total","2015",7445
+"019","Ferry","53019","ACS:B14001>1>10","Not enrolled in school","2015",5900
+"019","Ferry","53019","ACS:B14001>1>2","Enrolled in school","2015",1545
+"019","Ferry","53019","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",60
+"019","Ferry","53019","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",
+"019","Ferry","53019","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",246
+"019","Ferry","53019","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",389
+"019","Ferry","53019","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",519
+"019","Ferry","53019","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",238
+"019","Ferry","53019","ACS:B14001>1>2>9","Graduate or professional school","2015",12
+"021","Franklin","53021","ACS:B14001>1","Total","2015",81224
+"021","Franklin","53021","ACS:B14001>1>10","Not enrolled in school","2015",55827
+"021","Franklin","53021","ACS:B14001>1>2","Enrolled in school","2015",25397
+"021","Franklin","53021","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",1270
+"021","Franklin","53021","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",1691
+"021","Franklin","53021","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",6489
+"021","Franklin","53021","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",5715
+"021","Franklin","53021","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",6358
+"021","Franklin","53021","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",3514
+"021","Franklin","53021","ACS:B14001>1>2>9","Graduate or professional school","2015",360
+"023","Garfield","53023","ACS:B14001>1","Total","2015",2135
+"023","Garfield","53023","ACS:B14001>1>10","Not enrolled in school","2015",1723
+"023","Garfield","53023","ACS:B14001>1>2","Enrolled in school","2015",412
+"023","Garfield","53023","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",16
+"023","Garfield","53023","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",29
+"023","Garfield","53023","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",115
+"023","Garfield","53023","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",101
+"023","Garfield","53023","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",115
+"023","Garfield","53023","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",25
+"023","Garfield","53023","ACS:B14001>1>2>9","Graduate or professional school","2015",
+"025","Grant","53025","ACS:B14001>1","Total","2015",87219
+"025","Grant","53025","ACS:B14001>1>10","Not enrolled in school","2015",62359
+"025","Grant","53025","ACS:B14001>1>2","Enrolled in school","2015",24860
+"025","Grant","53025","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",1311
+"025","Grant","53025","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",2039
+"025","Grant","53025","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",5932
+"025","Grant","53025","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",5578
+"025","Grant","53025","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",6283
+"025","Grant","53025","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",3233
+"025","Grant","53025","ACS:B14001>1>2>9","Graduate or professional school","2015",484
+"027","Grays Harbor","53027","ACS:B14001>1","Total","2015",69078
+"027","Grays Harbor","53027","ACS:B14001>1>10","Not enrolled in school","2015",53901
+"027","Grays Harbor","53027","ACS:B14001>1>2","Enrolled in school","2015",15177
+"027","Grays Harbor","53027","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",1067
+"027","Grays Harbor","53027","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",854
+"027","Grays Harbor","53027","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",3035
+"027","Grays Harbor","53027","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",3420
+"027","Grays Harbor","53027","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",3671
+"027","Grays Harbor","53027","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",2984
+"027","Grays Harbor","53027","ACS:B14001>1>2>9","Graduate or professional school","2015",146
+"029","Island","53029","ACS:B14001>1","Total","2015",76609
+"029","Island","53029","ACS:B14001>1>10","Not enrolled in school","2015",60934
+"029","Island","53029","ACS:B14001>1>2","Enrolled in school","2015",15675
+"029","Island","53029","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",908
+"029","Island","53029","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",831
+"029","Island","53029","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",3244
+"029","Island","53029","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",3465
+"029","Island","53029","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",3511
+"029","Island","53029","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",3113
+"029","Island","53029","ACS:B14001>1>2>9","Graduate or professional school","2015",603
+"031","Jefferson","53031","ACS:B14001>1","Total","2015",29381
+"031","Jefferson","53031","ACS:B14001>1>10","Not enrolled in school","2015",24984
+"031","Jefferson","53031","ACS:B14001>1>2","Enrolled in school","2015",4397
+"031","Jefferson","53031","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",319
+"031","Jefferson","53031","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",195
+"031","Jefferson","53031","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",904
+"031","Jefferson","53031","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",824
+"031","Jefferson","53031","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",1094
+"031","Jefferson","53031","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",882
+"031","Jefferson","53031","ACS:B14001>1>2>9","Graduate or professional school","2015",179
+"033","King","53033","ACS:B14001>1","Total","2015",1971581
+"033","King","53033","ACS:B14001>1>10","Not enrolled in school","2015",1482906
+"033","King","53033","ACS:B14001>1>2","Enrolled in school","2015",488675
+"033","King","53033","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",33514
+"033","King","53033","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",23913
+"033","King","53033","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",93414
+"033","King","53033","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",92175
+"033","King","53033","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",91190
+"033","King","53033","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",118411
+"033","King","53033","ACS:B14001>1>2>9","Graduate or professional school","2015",36058
+"035","Kitsap","53035","ACS:B14001>1","Total","2015",246766
+"035","Kitsap","53035","ACS:B14001>1>10","Not enrolled in school","2015",188077
+"035","Kitsap","53035","ACS:B14001>1>2","Enrolled in school","2015",58689
+"035","Kitsap","53035","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",3772
+"035","Kitsap","53035","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",3045
+"035","Kitsap","53035","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",11950
+"035","Kitsap","53035","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",12119
+"035","Kitsap","53035","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",12706
+"035","Kitsap","53035","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",12744
+"035","Kitsap","53035","ACS:B14001>1>2>9","Graduate or professional school","2015",2353
+"037","Kittitas","53037","ACS:B14001>1","Total","2015",40910
+"037","Kittitas","53037","ACS:B14001>1>10","Not enrolled in school","2015",26916
+"037","Kittitas","53037","ACS:B14001>1>2","Enrolled in school","2015",13994
+"037","Kittitas","53037","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",404
+"037","Kittitas","53037","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",442
+"037","Kittitas","53037","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",1893
+"037","Kittitas","53037","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",1476
+"037","Kittitas","53037","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",1745
+"037","Kittitas","53037","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",7325
+"037","Kittitas","53037","ACS:B14001>1>2>9","Graduate or professional school","2015",709
+"039","Klickitat","53039","ACS:B14001>1","Total","2015",20171
+"039","Klickitat","53039","ACS:B14001>1>10","Not enrolled in school","2015",15905
+"039","Klickitat","53039","ACS:B14001>1>2","Enrolled in school","2015",4266
+"039","Klickitat","53039","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",291
+"039","Klickitat","53039","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",280
+"039","Klickitat","53039","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",1278
+"039","Klickitat","53039","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",840
+"039","Klickitat","53039","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",969
+"039","Klickitat","53039","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",539
+"039","Klickitat","53039","ACS:B14001>1>2>9","Graduate or professional school","2015",69
+"041","Lewis","53041","ACS:B14001>1","Total","2015",72938
+"041","Lewis","53041","ACS:B14001>1>10","Not enrolled in school","2015",56266
+"041","Lewis","53041","ACS:B14001>1>2","Enrolled in school","2015",16672
+"041","Lewis","53041","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",978
+"041","Lewis","53041","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",913
+"041","Lewis","53041","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",3504
+"041","Lewis","53041","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",3803
+"041","Lewis","53041","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",3991
+"041","Lewis","53041","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",3139
+"041","Lewis","53041","ACS:B14001>1>2>9","Graduate or professional school","2015",344
+"043","Lincoln","53043","ACS:B14001>1","Total","2015",10067
+"043","Lincoln","53043","ACS:B14001>1>10","Not enrolled in school","2015",7856
+"043","Lincoln","53043","ACS:B14001>1>2","Enrolled in school","2015",2211
+"043","Lincoln","53043","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",147
+"043","Lincoln","53043","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",174
+"043","Lincoln","53043","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",484
+"043","Lincoln","53043","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",495
+"043","Lincoln","53043","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",628
+"043","Lincoln","53043","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",221
+"043","Lincoln","53043","ACS:B14001>1>2>9","Graduate or professional school","2015",62
+"045","Mason","53045","ACS:B14001>1","Total","2015",58970
+"045","Mason","53045","ACS:B14001>1>10","Not enrolled in school","2015",47280
+"045","Mason","53045","ACS:B14001>1>2","Enrolled in school","2015",11690
+"045","Mason","53045","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",609
+"045","Mason","53045","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",564
+"045","Mason","53045","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",2705
+"045","Mason","53045","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",2724
+"045","Mason","53045","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",2886
+"045","Mason","53045","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",1930
+"045","Mason","53045","ACS:B14001>1>2>9","Graduate or professional school","2015",272
+"047","Okanogan","53047","ACS:B14001>1","Total","2015",39729
+"047","Okanogan","53047","ACS:B14001>1>10","Not enrolled in school","2015",31143
+"047","Okanogan","53047","ACS:B14001>1>2","Enrolled in school","2015",8586
+"047","Okanogan","53047","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",549
+"047","Okanogan","53047","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",554
+"047","Okanogan","53047","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",2045
+"047","Okanogan","53047","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",2168
+"047","Okanogan","53047","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",2148
+"047","Okanogan","53047","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",1002
+"047","Okanogan","53047","ACS:B14001>1>2>9","Graduate or professional school","2015",120
+"049","Pacific","53049","ACS:B14001>1","Total","2015",20094
+"049","Pacific","53049","ACS:B14001>1>10","Not enrolled in school","2015",16487
+"049","Pacific","53049","ACS:B14001>1>2","Enrolled in school","2015",3607
+"049","Pacific","53049","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",302
+"049","Pacific","53049","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",192
+"049","Pacific","53049","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",856
+"049","Pacific","53049","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",729
+"049","Pacific","53049","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",973
+"049","Pacific","53049","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",483
+"049","Pacific","53049","ACS:B14001>1>2>9","Graduate or professional school","2015",72
+"051","Pend Oreille","53051","ACS:B14001>1","Total","2015",12675
+"051","Pend Oreille","53051","ACS:B14001>1>10","Not enrolled in school","2015",10008
+"051","Pend Oreille","53051","ACS:B14001>1>2","Enrolled in school","2015",2667
+"051","Pend Oreille","53051","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",211
+"051","Pend Oreille","53051","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",135
+"051","Pend Oreille","53051","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",624
+"051","Pend Oreille","53051","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",669
+"051","Pend Oreille","53051","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",740
+"051","Pend Oreille","53051","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",224
+"051","Pend Oreille","53051","ACS:B14001>1>2>9","Graduate or professional school","2015",
+"053","Pierce","53053","ACS:B14001>1","Total","2015",789251
+"053","Pierce","53053","ACS:B14001>1>10","Not enrolled in school","2015",583668
+"053","Pierce","53053","ACS:B14001>1>2","Enrolled in school","2015",205583
+"053","Pierce","53053","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",10272
+"053","Pierce","53053","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",10932
+"053","Pierce","53053","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",43070
+"053","Pierce","53053","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",43887
+"053","Pierce","53053","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",45094
+"053","Pierce","53053","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",45088
+"053","Pierce","53053","ACS:B14001>1>2>9","Graduate or professional school","2015",7240
+"055","San Juan","53055","ACS:B14001>1","Total","2015",15714
+"055","San Juan","53055","ACS:B14001>1>10","Not enrolled in school","2015",13250
+"055","San Juan","53055","ACS:B14001>1>2","Enrolled in school","2015",2464
+"055","San Juan","53055","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",206
+"055","San Juan","53055","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",130
+"055","San Juan","53055","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",540
+"055","San Juan","53055","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",540
+"055","San Juan","53055","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",634
+"055","San Juan","53055","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",353
+"055","San Juan","53055","ACS:B14001>1>2>9","Graduate or professional school","2015",61
+"057","Skagit","53057","ACS:B14001>1","Total","2015",114913
+"057","Skagit","53057","ACS:B14001>1>10","Not enrolled in school","2015",88762
+"057","Skagit","53057","ACS:B14001>1>2","Enrolled in school","2015",26151
+"057","Skagit","53057","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",1727
+"057","Skagit","53057","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",1503
+"057","Skagit","53057","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",5674
+"057","Skagit","53057","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",6057
+"057","Skagit","53057","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",6610
+"057","Skagit","53057","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",4043
+"057","Skagit","53057","ACS:B14001>1>2>9","Graduate or professional school","2015",537
+"059","Skamania","53059","ACS:B14001>1","Total","2015",10950
+"059","Skamania","53059","ACS:B14001>1>10","Not enrolled in school","2015",8792
+"059","Skamania","53059","ACS:B14001>1>2","Enrolled in school","2015",2158
+"059","Skamania","53059","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",87
+"059","Skamania","53059","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",211
+"059","Skamania","53059","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",549
+"059","Skamania","53059","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",420
+"059","Skamania","53059","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",526
+"059","Skamania","53059","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",314
+"059","Skamania","53059","ACS:B14001>1>2>9","Graduate or professional school","2015",51
+"061","Snohomish","53061","ACS:B14001>1","Total","2015",719830
+"061","Snohomish","53061","ACS:B14001>1>10","Not enrolled in school","2015",536678
+"061","Snohomish","53061","ACS:B14001>1>2","Enrolled in school","2015",183152
+"061","Snohomish","53061","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",11184
+"061","Snohomish","53061","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",10175
+"061","Snohomish","53061","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",37382
+"061","Snohomish","53061","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",38634
+"061","Snohomish","53061","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",40821
+"061","Snohomish","53061","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",37481
+"061","Snohomish","53061","ACS:B14001>1>2>9","Graduate or professional school","2015",7475
+"063","Spokane","53063","ACS:B14001>1","Total","2015",463244
+"063","Spokane","53063","ACS:B14001>1>10","Not enrolled in school","2015",339086
+"063","Spokane","53063","ACS:B14001>1>2","Enrolled in school","2015",124158
+"063","Spokane","53063","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",6695
+"063","Spokane","53063","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",6151
+"063","Spokane","53063","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",23354
+"063","Spokane","53063","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",24261
+"063","Spokane","53063","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",
+"063","Spokane","53063","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",34066
+"063","Spokane","53063","ACS:B14001>1>2>9","Graduate or professional school","2015",5482
+"065","Stevens","53065","ACS:B14001>1","Total","2015",42250
+"065","Stevens","53065","ACS:B14001>1>10","Not enrolled in school","2015",32893
+"065","Stevens","53065","ACS:B14001>1>2","Enrolled in school","2015",9357
+"065","Stevens","53065","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",525
+"065","Stevens","53065","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",418
+"065","Stevens","53065","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",2155
+"065","Stevens","53065","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",2324
+"065","Stevens","53065","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",2680
+"065","Stevens","53065","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",1132
+"065","Stevens","53065","ACS:B14001>1>2>9","Graduate or professional school","2015",123
+"067","Thurston","53067","ACS:B14001>1","Total","2015",253492
+"067","Thurston","53067","ACS:B14001>1>10","Not enrolled in school","2015",189714
+"067","Thurston","53067","ACS:B14001>1>2","Enrolled in school","2015",63778
+"067","Thurston","53067","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",3780
+"067","Thurston","53067","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",3071
+"067","Thurston","53067","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",11883
+"067","Thurston","53067","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",13818
+"067","Thurston","53067","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",14045
+"067","Thurston","53067","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",14487
+"067","Thurston","53067","ACS:B14001>1>2>9","Graduate or professional school","2015",2694
+"069","Wahkiakum","53069","ACS:B14001>1","Total","2015",3984
+"069","Wahkiakum","53069","ACS:B14001>1>10","Not enrolled in school","2015",3192
+"069","Wahkiakum","53069","ACS:B14001>1>2","Enrolled in school","2015",792
+"069","Wahkiakum","53069","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",11
+"069","Wahkiakum","53069","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",9
+"069","Wahkiakum","53069","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",108
+"069","Wahkiakum","53069","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",229
+"069","Wahkiakum","53069","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",267
+"069","Wahkiakum","53069","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",142
+"069","Wahkiakum","53069","ACS:B14001>1>2>9","Graduate or professional school","2015",26
+"071","Walla Walla","53071","ACS:B14001>1","Total","2015",57714
+"071","Walla Walla","53071","ACS:B14001>1>10","Not enrolled in school","2015",41830
+"071","Walla Walla","53071","ACS:B14001>1>2","Enrolled in school","2015",15884
+"071","Walla Walla","53071","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",936
+"071","Walla Walla","53071","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",512
+"071","Walla Walla","53071","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",2946
+"071","Walla Walla","53071","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",3038
+"071","Walla Walla","53071","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",3025
+"071","Walla Walla","53071","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",5084
+"071","Walla Walla","53071","ACS:B14001>1>2>9","Graduate or professional school","2015",343
+"073","Whatcom","53073","ACS:B14001>1","Total","2015",200456
+"073","Whatcom","53073","ACS:B14001>1>10","Not enrolled in school","2015",143135
+"073","Whatcom","53073","ACS:B14001>1>2","Enrolled in school","2015",57321
+"073","Whatcom","53073","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",2997
+"073","Whatcom","53073","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",2547
+"073","Whatcom","53073","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",8722
+"073","Whatcom","53073","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",9594
+"073","Whatcom","53073","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",9790
+"073","Whatcom","53073","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",21847
+"073","Whatcom","53073","ACS:B14001>1>2>9","Graduate or professional school","2015",1824
+"075","Whitman","53075","ACS:B14001>1","Total","2015",45467
+"075","Whitman","53075","ACS:B14001>1>10","Not enrolled in school","2015",21895
+"075","Whitman","53075","ACS:B14001>1>2","Enrolled in school","2015",23572
+"075","Whitman","53075","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",533
+"075","Whitman","53075","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",434
+"075","Whitman","53075","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",1402
+"075","Whitman","53075","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",1691
+"075","Whitman","53075","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",1300
+"075","Whitman","53075","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",15773
+"075","Whitman","53075","ACS:B14001>1>2>9","Graduate or professional school","2015",2439
+"077","Yakima","53077","ACS:B14001>1","Total","2015",235052
+"077","Yakima","53077","ACS:B14001>1>10","Not enrolled in school","2015",168505
+"077","Yakima","53077","ACS:B14001>1>2","Enrolled in school","2015",66547
+"077","Yakima","53077","ACS:B14001>1>2>3","Enrolled in nursery school, preschool","2015",3534
+"077","Yakima","53077","ACS:B14001>1>2>4","Enrolled in kindergarten","2015",4255
+"077","Yakima","53077","ACS:B14001>1>2>5","Enrolled in grade 1 to grade 4","2015",16616
+"077","Yakima","53077","ACS:B14001>1>2>6","Enrolled in grade 5 to grade 8","2015",16636
+"077","Yakima","53077","ACS:B14001>1>2>7","Enrolled in grade 9 to grade 12","2015",15895
+"077","Yakima","53077","ACS:B14001>1>2>8","Enrolled in college, undergraduate years","2015",8599
+"077","Yakima","53077","ACS:B14001>1>2>9","Graduate or professional school","2015",1012

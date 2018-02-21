@@ -8,6 +8,9 @@ var app = express();
 var path = require('path');
 var request = require('request');
 
+var json2csv = require('json2csv');
+var fs = require('fs');
+
 
 
 // Initialize Middleware
@@ -30,27 +33,23 @@ app.get('/', function(req, res){
 // API Reqyest to retrieve Education Data
 	request('https://liveapi.livestories.com/observation/study/ACS:B14001/locale/US:ST:WA:CO:*', function (error, response, body) {
     	if (!error && response.statusCode == 200) {
-        	//console.log(body) // Print the google web page.
         	
         	
         	var obj=JSON.parse(body);
 			var data=JSON.parse(JSON.stringify(obj));
 
+
+			var data_attributes = {name: data.results.study.name, description: data.results.study.description}
 			var educationLevels = dataCleanse.county_educationLevels(data.results.study.dimensions[0].dimensions)
+			var educationData = dataCleanse.county_educationData(data.results.observations, educationLevels)
 
-			console.log('educaitonLevels',educationLevels)
-			console.log('observations', data.results.observations)
-			//console.log('dimensions', data.results.study.dimensions[0].dimensions)
-			// retrieve data set
-			// var data_attributes = {name: data.results.study.name, description: data.results.study.description}
-   //      	var observations = dataCleanse.county_level(data.results.observations);
-   //      	console.log(observations)
 
-        	// var dataSet = [data_attributes, observations]
 
-        	res.render('home');
-     	}
-	})
+        	var dataSet = [data_attributes, educationData]
+
+        	res.render('home', {dataSet: dataSet});
+      	}
+	 })
 
 
 
@@ -73,6 +72,8 @@ app.get('/', function(req, res){
  //        	res.render('home', {dataSet: dataSet});
  //     	}
 	// })
+
+	// res.render('home')
 })
 
 // API Request to retreive all available data sets for easier search in sequel database
