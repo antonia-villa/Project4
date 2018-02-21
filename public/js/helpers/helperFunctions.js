@@ -26,12 +26,14 @@ function treeData(data){
 		  var child = {county:counties[i], data: []}
 		  data.forEach(function(item){
 		    if(item.county_TR_code === counties[i]){
-		      var child2 = {
-		        dimension_desc: item.dimension_desc,
-		        value: item.value
-		      }
-		      child.data.push(child2)
-		    }
+			    if(item.dimension_desc != "Total"){
+			      var child2 = {
+			        dimension_desc: item.dimension_desc,
+			        value: item.value
+			      }
+			      child.data.push(child2)
+			    }
+			}
 		  })
 		  final_data.push(child)
 		}
