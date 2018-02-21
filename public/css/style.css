@@ -1,18 +1,8 @@
 body {
 margin: 0;
-background-color: #48494B;
 font-family: "proxima-nova", "Source Sans Pro", sans-serif;
 }
 
-#container {
-width: 800px;
-margin-left: 30px;
-margin-right: auto;
-margin-top: 30px;
-padding: 30px;
-background-color: white;
-box-shadow: 3px 3px 7px #222;
-}
 
 h1 {
 font-size: 24px;
@@ -34,15 +24,9 @@ color: #48494b;
 background: #e7e8e9;
 }
 
-svg {
-background-color: white;
-padding-left: 20px;
-}
 
-path {
-fill: #799dcb;
-stroke: #fff;
-}
+/* D3 Visual Styling */
+
 path:hover {
 fill:#48494b;
 cursor:pointer;

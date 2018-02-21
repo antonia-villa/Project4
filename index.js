@@ -1,5 +1,6 @@
 // Require packages
 require('dotenv').config();
+var dataCleanse = require('./dataCleanse.js');
 var bodyParser = require('body-parser'); 
 var express = require('express');
 var ejsLayouts = require('express-ejs-layouts');
@@ -20,25 +21,80 @@ app.use(ejsLayouts);
 // Locale: US:ST:*:CO:*
 
 app.use(express.static(path.join(__dirname, '/public')));
-app.use('/main', require('./controllers/data_collection'));
+
 
 app.get('/', function(req, res){
-	res.render('layout');
-// 	request('https://liveapi.livestories.com/observation/study/US.GOV.US.HHS.CDC.YRBSS:17/dimension/US.GOV.US.HHS.CDC.YRBSS:17%3EDEMO:US:RACE/locale/US:ST:*/', function (error, response, body) {
-//     	if (!error && response.statusCode == 200) {
-//         	//console.log(body) // Print the google web page.
-        	
-        	
-//         	var obj=JSON.parse(body);
-// 			var data=JSON.parse(JSON.stringify(obj));
-
-//         	var observations = data.results.observations
-//         	console.log('observations', observations)
-//         	res.render('home');
-//      	}
-// })
-
 	
-});
+	// res.render('home');
+
+// API Reqyest to retrieve Education Data
+	request('https://liveapi.livestories.com/observation/study/ACS:B14001/locale/US:ST:WA:CO:*', function (error, response, body) {
+    	if (!error && response.statusCode == 200) {
+        	//console.log(body) // Print the google web page.
+        	
+        	
+        	var obj=JSON.parse(body);
+			var data=JSON.parse(JSON.stringify(obj));
+
+			var educationLevels = dataCleanse.county_educationLevels(data.results.study.dimensions[0].dimensions)
+
+			console.log('educaitonLevels',educationLevels)
+			console.log('observations', data.results.observations)
+			//console.log('dimensions', data.results.study.dimensions[0].dimensions)
+			// retrieve data set
+			// var data_attributes = {name: data.results.study.name, description: data.results.study.description}
+   //      	var observations = dataCleanse.county_level(data.results.observations);
+   //      	console.log(observations)
+
+        	// var dataSet = [data_attributes, observations]
+
+        	res.render('home');
+     	}
+	})
+
+
+
+// API Request to retreive Unemployment Data
+	// request('https://liveapi.livestories.com/observation/study/COM.POLICYMAP.US.GOV.US.DOL.BLS.EMPLOYMENT:UNEMPRATE/locale/US:ST:WA,US:ST:WA:CO:*', function (error, response, body) {
+ //    	if (!error && response.statusCode == 200) {
+ //        	//console.log(body) // Print the google web page.
+        	
+        	
+ //        	var obj=JSON.parse(body);
+	// 		var data=JSON.parse(JSON.stringify(obj));
+			
+	// 		// retrieve data set
+	// 		var data_attributes = {name: data.results.study.name, description: data.results.study.description}
+ //        	var observations = dataCleanse.county_level(data.results.observations);
+ //        	console.log(observations)
+
+ //        	var dataSet = [data_attributes, observations]
+
+ //        	res.render('home', {dataSet: dataSet});
+ //     	}
+	// })
+})
+
+// API Request to retreive all available data sets for easier search in sequel database
+
+	// request('https://liveapi.livestories.com/study/*', function (error, response, body) {
+	// 	if (!error && response.statusCode == 200) {
+	// 		var obj=JSON.parse(body);
+	// 		var rawdata= JSON.parse(JSON.stringify(obj));
+
+	// 		// Select only applicable data sets
+	// 		console.log(rawdata)
+	// 		var data = dataCleanse.dataSets(rawdata.results);
+
+	// 		data.forEach(function(item){
+	// 			db.datasets.create({
+	// 			  dataset_id: item.id,
+	// 			  category: item.category,
+	// 			  name: item.name
+	// 			})
+	// 		})
+	// }
+	// })
+
 
 app.listen(3000);
