@@ -1,19 +1,22 @@
-<h1> Home Route </h1>
-<hr>
-
-<div class="container-fluid">
-	<h1 id="dataSetTitle"></h1>
-	<div class="row" id="firstRow">
-		<div class="col mx-auto"" id="d3_visual">
-			<h2> Unemployment by County</h2>
-			<div id="tooltip" class="hidden">
-            <p id="county"></p>
-            <p id="rate"></p>
-        </div>
-        </div>
-		<div class="col mx-auto" id="d3_visual2">
-		</div>
+<div class="container intro">
+	<div class="row introtext">
+		<h1 id="landingPageHeader">Learn about WA counties 
+			<span class="type text-info"></span>
+		 </h1>
 	</div>
+</div>
+<div class="container dataVisual">
+	<div class="row">
+			<div class="col-8" id="d3_visual">
+				<h2> Unemployment by County</h2>
+				<div id="tooltip" class="hidden">
+	            	<p id="county"></p>
+	            	<p id="rate"></p>
+	        	</div>
+	        </div>
+			<div class="col-4" id="d3_visual2">
+			</div>
+		</div>
 </div>
 
 <script>
@@ -22,9 +25,11 @@
 	var rawData = results[1]
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-    <script src="https://d3js.org/topojson.v2.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<script src="/js/type.js"></script> 
+<script src="/js/script.js"></script> 
 <script src="/js/helpers/helperFunctions.js"></script>
 <script src="/js/helpers/county_code_ref.js"></script>
 <script src="/js/mapVisual.js"></script>

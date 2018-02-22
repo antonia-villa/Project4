@@ -1,40 +1,9 @@
 // // D3 Map Visual
 
-// // Get Screen bounding box height and width
-// var bbox = d3.select("#firstRow").node().getBoundingClientRect()
-// var width = bbox.width 
-// var height = bbox.height
-// console.log(height)
+var bbox = d3.select("#d3_visual").node().getBoundingClientRect()
+var width = bbox.width 
+var height = bbox.height
 
-
-// var visual = d3.select("#d3_visual")
-//   .append("svg")
-//   .attr("width", width )
-//   .attr("height", height)
-
-// Retrieve data from API
-// var rawData = dataSet
-
-// Define funcitons to find min and max of data set
-// var minValue = getMin(rawData)
-// var maxValue = getMax(rawData)
-// var step = (maxValue-minValue)/7
-
-var w = 400
-var h = 700
-
-
-// create color range based on Min,Max and Step Value
-// var employment_domain = [minValue,0,0,0,0,0,0,0];
-// for(var i=1; i< employment_domain.length; i++){
-//   var tmp = (employment_domain[i-1] + step)
-//   employment_domain[i]= tmp
-// }
-// console.log('domain', employment_domain)
-
-// var employment_color = d3.scaleThreshold()
-//   .domain(employment_domain)
-//   .range(d3.schemeBlues[7])
 
 
 var employment_color = d3.scaleThreshold()
@@ -45,8 +14,9 @@ var employment_color = d3.scaleThreshold()
 //Create SVG
       var svg = d3.select("#d3_visual")
               .append("svg")
-              .attr("width", w)
-              .attr("height", h)
+              .attr("width", width )
+              .attr("height", height)
+              .attr("transform", "rotate(-14)")
 
 
 var path = d3.geoPath();
@@ -78,7 +48,7 @@ function ready(error, data){
 
   // identify projection and path
   var projection = d3.geoAlbersUsa()
-    .fitExtent([[20,20], [460, 580]], county_data) // assigns ([padding], [width and height], dataObject)
+    .fitExtent([[20,20], [width, height]], county_data) // assigns ([padding], [width and height], dataObject)
 
     // define path
   var geoPath = d3.geoPath()
@@ -97,8 +67,8 @@ function ready(error, data){
    .attr("d", geoPath)
             .on("mouseover", function(d){
               
-            var xPosition = w/2 + 150;
-            var yPosition = h/2;
+            var xPosition = width/2 + 150;
+            var yPosition = height/2;
             d3.select("#tooltip")
             .style("left", xPosition + "px")
             .style("top", yPosition + "px");

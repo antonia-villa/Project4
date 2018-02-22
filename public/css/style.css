@@ -1,33 +1,120 @@
-body {
-margin: 0;
-font-family: "proxima-nova", "Source Sans Pro", sans-serif;
+/************************/
+/************************/
+
+html,body,.container {
+	font-family: 'Barlow', sans-serif;
+  	position: relative;
+    height:100%;
 }
 
-.nv-y .tick line { display: none; }
-
-
-h1 {
-font-size: 24px;
-margin: 0;
+.container {
+    display:table;
+    width: 100%;
+    padding: 50px 0 0 0; /*set left/right padding according to needs*/
+    box-sizing: border-box;
 }
 
-p {
-font-size: 16px;
-margin: 15px 0 10px 0;
+.row {
+	margin-top: 20px;
+    height: 100%;
 }
+
+
+/********************/
+/* Nav Bar Styling  */
+/********************/
 
 a {
-color: #799DCB;
-text-decoration: none;
-transition: color .3s, background .3s, border .3s;
-}
-a:hover {
-color: #48494b;
-background: #e7e8e9;
+	color: #E6E6E6;
 }
 
+.navbar,.navbar-default {
+	
+	background-color: #20252b !important;
+}
 
-/* D3 Visual Styling */
+#websiteIcon {
+	margin-right: 10px;
+}
+
+/************************/
+/* Intro */
+/************************/
+.intro {
+  height: 100%;
+  padding: 200px 0;
+  padding-left: 50px;
+padding-right: 50px;
+  background-color: #E6E6E6;
+  text-align: center;
+}
+
+#landingPageHeader{
+	font-size: 58px;
+}
+.introtext{
+	text-align: center;
+}
+.type{
+	color:black;
+	text-decoration: underline;
+}
+
+.text-info{
+	color: #0A536F !important;
+}
+.typed-cursor{
+	opacity: 1;
+	-webkit-animation: blink 0.7s infinite;
+	-moz-animation: blink 0.7s infinite;
+	animation: blink 0.7s infinite;
+}
+@keyframes blink{
+	0% { opacity:1; }
+	50% { opacity:0; }
+	100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+	0% { opacity:1; }
+	50% { opacity:0; }
+	100% { opacity:1; }
+}
+@-moz-keyframes blink{
+	0% { opacity:1; }
+	50% { opacity:0; }
+	100% { opacity:1; }
+}
+
+/************************/
+/* D3 Bar Graph Styling */
+/************************/
+
+
+.dataVisual {
+  
+  padding-left: 50px;
+padding-right: 50px;
+  background-color: #FFFFFF;
+  text-align: center;
+}
+
+#viz2_container{
+	height: 100%;
+}
+.nv-y .tick line { display: none; }
+
+.yaxis line{
+  display: none;
+}
+
+.yaxis path{
+  display: none;
+}
+
+.label{
+	font-size: 10px;
+}
+
 
 path:hover {
 fill:#48494b;
@@ -59,3 +146,4 @@ margin: 0;
 font-size: 14px;
 line-height: 18px;
 }
+

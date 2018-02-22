@@ -1,5 +1,8 @@
+// Retrieve Raw Data from API and reformat
 var dataObject = treeData(rawData)
-console.log(dataObject)
+console.log(titles)
+
+// Set global county code
 var county_code;
 
 function barChartIDClear(event){
@@ -16,12 +19,10 @@ function barChartVisual(event){
     // Extract data
 	var dataObject2 = dataObject.find(function(element) {
 		if(String(element.county) === String(county_code)){
-			console.log(element.data)
 			return element.data;
 		}
 	});
-	console.log('object2', dataObject2)
-
+	console.log(dataObject2)
 	// Check to see if data exists for county
 	if(dataObject2){
 		// Select county Name for header
@@ -45,8 +46,7 @@ function barChartVisual(event){
 		    }
 		  }
 		})
-		
-
+	
 		// Removed Enrolled in School total
 		var enrolled_total;
 		for(var i=0; i<data.length; i++){
@@ -54,8 +54,6 @@ function barChartVisual(event){
       	enrolled_total = data.splice(i, 1)
   			}
 		}
-
-		console.log(enrolled_total);
 
 		// Add in % of Total
 		var total = 0;
@@ -66,7 +64,12 @@ function barChartVisual(event){
 		})
 
 		data.forEach(function(item){
-		  item.percent = (Number(item.value)/total).toFixed(2)
+			if(typeof item.value === 'undefined' || !item.value){
+				item.percent = 0
+			} else {
+				item.percent = (Number(item.value)/total).toFixed(2)		
+			}
+		  
 		})
 
 		// sort bars based on value
@@ -79,21 +82,26 @@ function barChartVisual(event){
 
 		// Build Visual
 		$('#d3_visual2').append('<div id="viz2_container"></div>');
-		$('#viz2_container').append('<h1>'+county_name+'</h1>');
-		$('#viz2_container').append('<p> Of the <strong>'+total+'</strong> census respondents in 2015, '+enrolled_percent+'% reported enrollment in school.</p>')
+		$('#viz2_container').append('<h1>School enrollment by level of school</h1>')
+		$('#viz2_container').append('<h2>'+county_name+'</h2>');
+		$('#viz2_container').append('<p> Of the <strong>'+total.toLocaleString()+'</strong> census respondents in 2015, '+enrolled_percent+'% reported enrollment in school.</p>')
 
 
 
 		//set up svg using margin 
         var margin = {
             top: 15,
-            right: 25,
+            right: 5,
             bottom: 15,
-            left: 60
+            left: 5
         };
 
-        var width = 400 - margin.left - margin.right,
-            height = 500 - margin.top - margin.bottom;
+        var bbox = d3.select("#d3_visual").node().getBoundingClientRect()
+		// var width = bbox.width  - margin.left - margin.right,
+		// 	height = bbox.height - margin.top - margin.bottom;
+
+		var height = (bbox.height/2) - margin.top - margin.bottom,
+			width = bbox.width  - margin.left - margin.right;
 
 		 var svg2 = d3.select("#viz2_container").append("svg")
 		            .attr("width", width + margin.left + margin.right)
@@ -120,12 +128,15 @@ function barChartVisual(event){
 		 //make y axis to show bar names
         var yAxis = d3.axisLeft(y)
             //no tick marks
-            .tickValues([]);
+            
+            .tickValues([])
+            
        
 
         var gy = svg2.append("g")
-            .attr("class", "y axis")
+            .attr("class", "yaxis")
             .call(yAxis)
+            
 
 
         var bars = svg2.selectAll(".bar")
