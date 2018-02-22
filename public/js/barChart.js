@@ -12,6 +12,7 @@ function barChartIDClear(event){
 
 function barChartVisual(event){
 	$('#viz2_container').remove();
+	$('#tooltip2').remove();
 
 	// Retrieve Corresponding county code
     county_code = event.target.id
@@ -34,7 +35,6 @@ function barChartVisual(event){
 
 		// Extract Only Data from object return
 		var data = dataObject2.data
-		var colors = ['#0000b4','#0082ca','#0094ff','#0d4bcf','#0066AE','#074285','#00187B','#285964','#405F83','#416545','#4D7069','#6E9985','#7EBC89','#0283AF','#79BCBF','#99C19E'];
 
 
 		// Fixed Data Lables
@@ -74,7 +74,7 @@ function barChartVisual(event){
 
 		// sort bars based on value
 		data = data.sort(function(a,b){
-			return d3.descending(a.value, b.value)
+			return d3.ascending(a.value, b.value)
 		})
 
 		var enrolled_percent = Math.floor((Number(enrolled_total[0].value)/total)*100)
@@ -82,10 +82,10 @@ function barChartVisual(event){
 
 		// Build Visual
 		$('#d3_visual2').append('<div id="viz2_container"></div>');
-		$('#viz2_container').append('<h1>School enrollment by level of school</h1>')
-		$('#viz2_container').append('<h2>'+county_name+'</h2>');
-		$('#viz2_container').append('<p> Of the <strong>'+total.toLocaleString()+'</strong> census respondents in 2015, '+enrolled_percent+'% reported enrollment in school.</p>')
-
+		$('#viz2_container').append('<h3>School enrollment: by level</h3>')
+		$('#viz2_container').append('<h4>'+county_name+": "+ county_code+ '</h4>');
+		$('#viz2_container').append('<p> Of the '+total.toLocaleString()+' census respondents in 2015, '+enrolled_percent+'% reported enrollment in school.</p>')
+		$('body').append('<div id="tooltip2" class="hidden"><p id="educaiton_status"></p></div>');
 
 
 		//set up svg using margin 
@@ -100,27 +100,31 @@ function barChartVisual(event){
 		// var width = bbox.width  - margin.left - margin.right,
 		// 	height = bbox.height - margin.top - margin.bottom;
 
-		var height = (bbox.height/2) - margin.top - margin.bottom,
-			width = bbox.width  - margin.left - margin.right;
+		var height2 = (bbox.height/2) - margin.top - margin.bottom;
+
+		var bbox2 = d3.select("#d3_visual2").node().getBoundingClientRect()
+		var width2 = (bbox2.width/2)  - margin.left - margin.right;
 
 		 var svg2 = d3.select("#viz2_container").append("svg")
-		            .attr("width", width + margin.left + margin.right)
-		            .attr("height", height + margin.top + margin.bottom)
+		            .attr("width", width2 + margin.left + margin.right)
+		            .attr("height", height2 + margin.top + margin.bottom)
 		            .append("g")
 		            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 		
-//		var tooltip = d3.select("body").append("div").attr("class", "toolTip");
+var colors = d3.scaleThreshold()
+    .domain(d3.range(2, 10))
+    .range(d3.schemePurples[9]);
 
 
 		var x = d3.scaleLinear()
-				.range([0, width])
+				.range([0, width2])
 				.domain([0, d3.max(data, function (d) {
                 return d.percent;
             })]);
 
 		var y = d3.scaleBand()
-				.range([height, 0])
-				.padding(.02)
+				.range([height2, 0])
+				.padding(.2)
 				.domain(data.map(function (d) {
                 return d.dimension_desc;
             }));
@@ -143,12 +147,17 @@ function barChartVisual(event){
             .data(data)
             .enter()
             .append("g")
-            .style("fill", function(d, i) { return colors[i]; })
+            .style("fill", function(d,i){
+            	return colors(i)
+            })
 
 
         //append rects
         bars.append("rect")
             .attr("class", "bar")
+            .attr("id", function (d) {
+                return y(d.dimension_desc);
+            })
             .attr("y", function (d) {
                 return y(d.dimension_desc);
             })
@@ -163,14 +172,32 @@ function barChartVisual(event){
             .attr("class", "label")
             //y position of the label is halfway down the bar
             .attr("y", function (d) {
-                return y(d.dimension_desc) + y.bandwidth() / 2 + 4;
+                return y(d.dimension_desc) + y.bandwidth() / 2+6;
             })
             //x position is 3 pixels to the right of the bar
             .attr("x", 0)
             .text(function (d) {
-                return d.dimension_desc;
+            	var html = Math.floor(d.percent*100) + '%'
+                return html;
             })
-            .style("fill", "black");
+            .on("mouseover", function(d){
+              
+            var xPosition = width2/2;
+            var yPosition = height/2;
+            d3.select("#tooltip2")
+            .style("left", xPosition + "px")
+            .style("top", yPosition + "px");
+
+            d3.select("#educaiton_status")
+            // .text(d.properties.NAME );
+            .html(d.dimension_desc);
+
+            d3.select("#tooltip2")
+            .classed("hidden", false);
+            })
+            .on("mouseout", function(){
+            d3.select("#tooltip2").classed("hidden", true);
+            });
 
 
 	}

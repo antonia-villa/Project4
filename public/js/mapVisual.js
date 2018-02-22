@@ -8,7 +8,7 @@ var height = bbox.height
 
 var employment_color = d3.scaleThreshold()
     .domain(d3.range(2, 10))
-    .range(d3.schemeBlues[9]);
+    .range(d3.schemeGreys[9]);
 
 
 //Create SVG

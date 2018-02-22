@@ -7,6 +7,32 @@ html,body,.container {
     height:100%;
 }
 
+h2{
+	font-size: 36px;
+	color: #20252b;
+	text-transform: bold;
+	text-shadow: 1px 1px #E6E6E6;
+	margin:0;
+}
+
+h3{
+	font-size: 26px;
+	color: #20252b;
+	text-transform: bold;
+	margin:0;
+}
+
+h4{
+	font-size: 20px;
+	color: #20252b;
+	font-style: italic;
+	margin:0;
+}
+
+p {
+	font-weight: normal;
+	font-size: 12px
+}
 .container {
     display:table;
     width: 100%;
@@ -100,7 +126,17 @@ padding-right: 50px;
 
 #viz2_container{
 	height: 100%;
+	margin-bottom: 20px;
+	background-color: #E6E6E6;
+	color: #20252b;
+	border: .5px solid lightgray;
+	border-radius: 5px;
+	font-weight: bold;
+	padding: 20px 20px 20px 20px;
+	text-align: left;
+	box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.3), 0 8px 22px 0 rgba(0, 0, 0, 0.2);
 }
+
 .nv-y .tick line { display: none; }
 
 .yaxis line{
@@ -112,7 +148,9 @@ padding-right: 50px;
 }
 
 .label{
-	font-size: 10px;
+	font-size: 12px;
+	font-style: normal;
+
 }
 
 
@@ -122,6 +160,22 @@ cursor:pointer;
 }
 
 #tooltip {
+width: 150px;
+height: auto;
+padding: 5px;
+background-color: #fff;
+color: #000;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+-webkit-box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+-moz-box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+pointer-events: none;
+position: absolute;
+}
+
+#tooltip2 {
 width: 150px;
 height: auto;
 padding: 5px;
