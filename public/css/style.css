@@ -100,8 +100,6 @@ p {
 	position: absolute;
     width: 200px;
     top: 0;
-    
-
 }
 
 .nv-y .tick line { display: none; }
@@ -122,47 +120,26 @@ p {
 
 
 path:hover {
-fill:#48494b;
-cursor:pointer;
+	fill:#6f7376;
+	stroke: black;
+	stroke-width: 1.5px;
+	cursor:pointer;
 }
+
+
 
 .toolTip {
   position: absolute;
   display: none;
-  width: 200px;
   height: auto;
   overflow-wrap: normal;
   background: none repeat scroll 0 0 white;
-  box-shadow: -3px 3px 15px #888888;
+  border-radius: 3px;
   color: black;
-  font-size: 18px;
+  font-size: 12px;
   padding: 5px;
-  text-align: center;
+  text-align: left;
 }
 
-#tooltip2 {
-width: 150px;
-height: auto;
-padding: 5px;
-background-color: #fff;
-color: #000;
--webkit-border-radius: 5px;
--moz-border-radius: 5px;
-border-radius: 5px;
--webkit-box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
--moz-box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
-box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
-pointer-events: none;
-position: absolute;
-}
 
-#tooltip.hidden {
-display: none;
-}
-
-#tooltip p {
-margin: 0;
-font-size: 14px;
-line-height: 18px;
-}
 
