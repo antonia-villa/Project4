@@ -11,6 +11,7 @@ function barChartIDClear(event){
 }
 
 function barChartVisual(event){
+
 	$('#viz2_container').remove();
 	$('#tooltip2').remove();
 
@@ -23,9 +24,8 @@ function barChartVisual(event){
 			return element.data;
 		}
 	});
-	console.log(dataObject2)
 	// Check to see if data exists for county
-	if(dataObject2){
+	if(dataObject2) {
 		// Select county Name for header
 		var county_info = county_ref.find(function(element) {
     		    return element.county_TR_code === String(county_code);
@@ -90,13 +90,13 @@ function barChartVisual(event){
 
 		//set up svg using margin 
         var margin = {
-            top: 15,
+            top: 10,
             right: 5,
-            bottom: 15,
+            bottom: 10,
             left: 5
         };
 
-        var bbox = d3.select("#d3_visual").node().getBoundingClientRect()
+        var bbox = d3.select("#d3_visual2").node().getBoundingClientRect()
 		// var width = bbox.width  - margin.left - margin.right,
 		// 	height = bbox.height - margin.top - margin.bottom;
 
@@ -111,9 +111,9 @@ function barChartVisual(event){
 		            .append("g")
 		            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 		
-var colors = d3.scaleThreshold()
-    .domain(d3.range(2, 10))
-    .range(d3.schemePurples[9]);
+		var colors = d3.scaleThreshold()
+		    .domain(d3.range(2, 10))
+		    .range(d3.schemeBlues[9]);
 
 
 		var x = d3.scaleLinear()
@@ -131,17 +131,11 @@ var colors = d3.scaleThreshold()
 
 		 //make y axis to show bar names
         var yAxis = d3.axisLeft(y)
-            //no tick marks
-            
             .tickValues([])
             
-       
-
         var gy = svg2.append("g")
             .attr("class", "yaxis")
             .call(yAxis)
-            
-
 
         var bars = svg2.selectAll(".bar")
             .data(data)
@@ -180,25 +174,23 @@ var colors = d3.scaleThreshold()
             	var html = Math.floor(d.percent*100) + '%'
                 return html;
             })
-            .on("mouseover", function(d){
+            // .on("mouseover", function(d){
               
-            var xPosition = width2/2;
-            var yPosition = height/2;
-            d3.select("#tooltip2")
-            .style("left", xPosition + "px")
-            .style("top", yPosition + "px");
+            // var xPosition = width2/2;
+            // var yPosition = height/2;
+            // d3.select("#tooltip2")
+            // .style("left", xPosition + "px")
+            // .style("top", yPosition + "px");
 
-            d3.select("#educaiton_status")
-            // .text(d.properties.NAME );
-            .html(d.dimension_desc);
+            // d3.select("#educaiton_status")
+            // // .text(d.properties.NAME );
+            // .html(d.dimension_desc);
 
-            d3.select("#tooltip2")
-            .classed("hidden", false);
-            })
-            .on("mouseout", function(){
-            d3.select("#tooltip2").classed("hidden", true);
-            });
-
-
-	}
+            // d3.select("#tooltip2")
+            // .classed("hidden", false);
+            // })
+            // .on("mouseout", function(){
+            // d3.select("#tooltip2").classed("hidden", true);
+            // });
+    }
 }
