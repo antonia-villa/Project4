@@ -77,7 +77,7 @@ function ready(error, data){
         tool.style("left", d3.event.pageX + 10 + "px")
         tool.style("top", d3.event.pageY - 20 + "px")
         tool.style("display", "inline-block")
-          .html("<strong>"+"County: "+"</strong>" +  d.properties.NAME+ "<br/>" + "Unemployment Rate:" + d.value + "%");
+          .html("<span class='bold'> County: </span>" +  d.properties.NAME+ "<br/><span class='bold'>" + "Unemployment Rate: </span>" + d.value + "%");
       })
       .on("mouseout", function(){
           tool.style("display", "none");

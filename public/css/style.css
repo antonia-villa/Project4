@@ -63,6 +63,10 @@ svg {
     height: 100%;
 }
 
+.bold {
+	font-weight: bold;
+}
+
 
 /********************/
 /* Header Bar Styling*/
@@ -84,7 +88,6 @@ svg {
 	margin-top: 5px;
 	font-size: 18px;
 	color: #bcbcbc;
-	font-style: italic;
 	font-weight: normal;
 	text-align: center;
 	font-family: 'Raleway', sans-serif;
@@ -162,7 +165,7 @@ path:hover {
 }
 
 .toolTip2 {
-  background-color: #c5c6c2;
+  background-color: #edefec;
   position: absolute;
   display: none;
   height: auto;
@@ -170,13 +173,15 @@ path:hover {
   border-radius: 3px;
   color: black;
   font-size: 14px;
-  padding: 5px;
+  padding: 8px;
   text-align: left;
 }
 
-#title{
+#ToolTip2title{
 	font-size: 16px;
 	font-weight: bold;
+	text-transform: capitalize;
+
 }
 
 /************************/
@@ -184,9 +189,10 @@ path:hover {
 /************************/
 
 #d3_visual2{
+	margin-top: 40px;
 	position: absolute;
     width: 350px;
-    height: 365px;
+    height: 370px;
     top: 0;
 }
 

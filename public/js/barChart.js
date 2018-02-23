@@ -116,7 +116,7 @@ function barChartVisual(event, rawData){
 		// var width = bbox.width  - margin.left - margin.right,
 		// 	height = bbox.height - margin.top - margin.bottom;
 
-		var height2 = (bbox.height) - margin.top - margin.bottom;
+		var height2 = (bbox.height-10) - margin.top - margin.bottom;
 		var width2 = (bbox.width)  - margin.left - margin.right;
 
 		var svg2 = d3.select("#barChart").append("svg")
@@ -141,7 +141,7 @@ function barChartVisual(event, rawData){
         var yAxis = d3.axisLeft(y)
             .tickValues([])
 
-            var tool2 = d3.select("body")
+        var tool2 = d3.select("body")
             .append("div")
             .attr("class", "toolTip2");
             
@@ -159,7 +159,7 @@ function barChartVisual(event, rawData){
 		        tool2.style("left", d3.event.pageX + 10 + "px")
 		        tool2.style("top", d3.event.pageY - 20 + "px")
 		        tool2.style("display", "inline-block")
-		          .html("<span id='title'>" + d.dimension_desc + "</span><hr/>"+"<br/>" + "<strong>Respondents: </strong>" + d.value.toLocaleString()+"<br/>"+"<strong>Percent: </strong>"+ Math.floor(Number(d.percent)*100)+"%");
+		          .html("<span id='ToolTip2title'>" + d.dimension_desc + "</span><hr/>" + "<strong>Respondents: </strong>" + d.value.toLocaleString()+"<br/>"+"<strong>Percent: </strong>"+ Math.floor(Number(d.percent)*100)+"%");
 		      })
 		      .on("mouseout", function(){
 		          tool2.style("display", "none");
@@ -194,15 +194,9 @@ function barChartVisual(event, rawData){
                 var html = Math.floor(d.percent*100) + '%'
                 return html;
             })
-                        //x position is 3 pixels to the right of the bar
             .attr("x", function (d) {
                 return x(d.percent) + 3;
             })
-
-            // .attr("x", function(d){
-            //     var width = this.getBBox().width;
-            //     return Math.max(width + valueMargin, x(d.percent));
-            // });
 
 	  }
 }
