@@ -4,7 +4,6 @@ https://visualize-wa-county-data.herokuapp.com/
 Dive into Washington state county level census data from 2015. This is an exploration and project aimed to learn how to map geoData using topoJSON files and D3.
 
 ![](/public/img/home_page.png) 
-![](/public/img/home_page_2.png) 
 
 ## Requirements
 * Map geo data at county or state level
@@ -30,10 +29,11 @@ The target user for this app is any citizen curious about data collection at the
 ##### Brainstorm and Choose Data
 ##### 1. Explored API
 ##### 2. Export all available studies from API catalog to SQL database to search through data
-##### 3. Researched Census Data Organizational Structure and GeoCodes
+##### 3. Researched Census Data Organizational Structure and GeoCodes using SLIDV structure [study:locale:interval:dimension:value]
 ##### 4. Identify data requirements for d3 map visualization
 ##### 5. Choose census study that contains Geo location data at county level
-##### 6. Learned how to use qGIS software to create topoJSON file for mapping 
+##### 6. Learned how to use qGIS software to create topoJSON file from shape file for mapping
+![](/public/img/qgis_software.png) 
 
 ### Sprint 2
 ##### 1. Created API call for GEOData
