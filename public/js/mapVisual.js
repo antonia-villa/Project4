@@ -10,7 +10,7 @@ var height = (bbox.height*1) - 30
 // Assign employment colors
 var employment_color = d3.scaleThreshold()
     .domain(d3.range(2, 10))
-    .range(d3.schemeGreens[9])
+    .range(d3.schemeGreys[9])
 
 // Move graph over to center image
 var translate_value = width/8
@@ -24,7 +24,7 @@ var svg = d3.select("#d3_visual")
 
 var path = d3.geoPath();
 // Append Div for tool tip
-  //Append Tooltip
+//Append Tooltip
 var tool = d3.select("body")
             .append("div")
             .attr("class", "toolTip");

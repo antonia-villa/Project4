@@ -12,7 +12,9 @@ function barChartIDClear(event){
 
 function barChartVisual(event){
 
-	$('#viz2_container').remove();
+	if($('#viz2_container').length){
+		$('#viz2_container').remove();
+	}
 	$('#tooltip2').remove();
 
 	// Retrieve Corresponding county code
@@ -76,16 +78,23 @@ function barChartVisual(event){
 		data = data.sort(function(a,b){
 			return d3.ascending(a.value, b.value)
 		})
-
+		
 		var enrolled_percent = Math.floor((Number(enrolled_total[0].value)/total)*100)
+		var unenrolled = data.find(o => o.dimension_desc === 'Not enrolled in school');
+		var unenrolled_percent = Math.floor(unenrolled.percent*100)
 		
 
 		// Build Visual
 		$('#d3_visual2').append('<div id="viz2_container"></div>');
-		$('#viz2_container').append('<h3>School enrollment: by level</h3>')
-		$('#viz2_container').append('<h4>'+county_name+": "+ county_code+ '</h4>');
-		$('#viz2_container').append('<p> Of the '+total.toLocaleString()+' census respondents in 2015, '+enrolled_percent+'% reported enrollment in school.</p>')
-		$('body').append('<div id="tooltip2" class="hidden"><p id="educaiton_status"></p></div>');
+		$('#viz2_container').append('<div id="visualHeader"></div>');
+		$('#viz2_container').append('<div id="barChart"></div>');
+		$('#visualHeader').append('<h3 id="barChartHeader">School Enrollment (2015)</h3>')
+		$('#visualHeader').append('<h3 id="barChartSubHeader">' +county_name +' County</h3>'+"<hr/>");
+
+		// $('#visualHeader').append('<h3 id="barChartHeader">' +county_name +' County</h3>')
+		// $('#visualHeader').append('<h3 id="barChartSubHeader">School Enrollment (2015)</h3>'+"<hr/>");
+		$('#visualHeader').append('<p> Of the <strong>'+total.toLocaleString()+' </strong> census respondents in'+county_name+' county, <strong>'+enrolled_percent+'%</strong> reported enrollment with <strong>'+unenrolled_percent+'%</strong> not enrolled.</p>')
+
 
 
 		//set up svg using margin 
@@ -93,28 +102,24 @@ function barChartVisual(event){
             top: 10,
             right: 5,
             bottom: 10,
-            left: 5
+            left: 0
         };
+        var axisMargin = 20,
+        	valueMargin = 4;
 
-        var bbox = d3.select("#d3_visual2").node().getBoundingClientRect()
+        var bbox = d3.select("#barChart").node().getBoundingClientRect()
 		// var width = bbox.width  - margin.left - margin.right,
 		// 	height = bbox.height - margin.top - margin.bottom;
 
-		var height2 = (bbox.height/2) - margin.top - margin.bottom;
+		var height2 = (bbox.height) - margin.top - margin.bottom;
+		var width2 = (bbox.width)  - margin.left - margin.right;
 
-		var bbox2 = d3.select("#d3_visual2").node().getBoundingClientRect()
-		var width2 = (bbox2.width/2)  - margin.left - margin.right;
-
-		 var svg2 = d3.select("#viz2_container").append("svg")
+		 var svg2 = d3.select("#barChart").append("svg")
 		            .attr("width", width2 + margin.left + margin.right)
 		            .attr("height", height2 + margin.top + margin.bottom)
 		            .append("g")
 		            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 		
-		var colors = d3.scaleThreshold()
-		    .domain(d3.range(2, 10))
-		    .range(d3.schemeBlues[9]);
-
 
 		var x = d3.scaleLinear()
 				.range([0, width2])
@@ -124,7 +129,7 @@ function barChartVisual(event){
 
 		var y = d3.scaleBand()
 				.range([height2, 0])
-				.padding(.2)
+				.padding(.1)
 				.domain(data.map(function (d) {
                 return d.dimension_desc;
             }));
@@ -132,25 +137,37 @@ function barChartVisual(event){
 		 //make y axis to show bar names
         var yAxis = d3.axisLeft(y)
             .tickValues([])
+
+            var tool2 = d3.select("body")
+            .append("div")
+            .attr("class", "toolTip2");
             
         var gy = svg2.append("g")
             .attr("class", "yaxis")
             .call(yAxis)
 
+
         var bars = svg2.selectAll(".bar")
             .data(data)
             .enter()
             .append("g")
-            .style("fill", function(d,i){
-            	return colors(i)
-            })
-
+            .on("mouseover", function(d){
+            	console.log(d)
+		        tool2.style("left", d3.event.pageX + 10 + "px")
+		        tool2.style("top", d3.event.pageY - 20 + "px")
+		        tool2.style("display", "inline-block")
+		          .html("<span id='title'>" + d.dimension_desc + "</span><hr/>"+"<br/>" + "<strong>Respondents: </strong>" + d.value.toLocaleString()+"<br/>"+"<strong>Percent: </strong>"+ Math.floor(Number(d.percent)*100)+"%");
+		      })
+		      .on("mouseout", function(){
+		          tool2.style("display", "none");
+		      });
+           
 
         //append rects
         bars.append("rect")
             .attr("class", "bar")
             .attr("id", function (d) {
-                return y(d.dimension_desc);
+                return d.dimension_desc;
             })
             .attr("y", function (d) {
                 return y(d.dimension_desc);
@@ -159,38 +176,25 @@ function barChartVisual(event){
             .attr("x", 0)
             .attr("width", function (d) {
                 return x(d.percent);
-            });
-
-	    //add a value label to the right of each bar
-        bars.append("text")
-            .attr("class", "label")
-            //y position of the label is halfway down the bar
-            .attr("y", function (d) {
-                return y(d.dimension_desc) + y.bandwidth() / 2+6;
             })
-            //x position is 3 pixels to the right of the bar
-            .attr("x", 0)
-            .text(function (d) {
-            	var html = Math.floor(d.percent*100) + '%'
+
+
+        bars.append("text")
+            .attr("class", "value")
+            .attr("y", function (d) {
+                return y(d.dimension_desc) + y.bandwidth() / 2
+            })
+            .attr("dx", -valueMargin) //margin right
+            .attr("dy", ".35em") //vertical align middle
+            .attr("text-anchor", "end")
+            .text(function(d){
+                var html = Math.floor(d.percent*100) + '%'
                 return html;
             })
-            // .on("mouseover", function(d){
-              
-            // var xPosition = width2/2;
-            // var yPosition = height/2;
-            // d3.select("#tooltip2")
-            // .style("left", xPosition + "px")
-            // .style("top", yPosition + "px");
+            .attr("x", function(d){
+                var width = this.getBBox().width;
+                return Math.max(width + valueMargin, x(d.percent));
+            });
 
-            // d3.select("#educaiton_status")
-            // // .text(d.properties.NAME );
-            // .html(d.dimension_desc);
-
-            // d3.select("#tooltip2")
-            // .classed("hidden", false);
-            // })
-            // .on("mouseout", function(){
-            // d3.select("#tooltip2").classed("hidden", true);
-            // });
-    }
+	  }
 }

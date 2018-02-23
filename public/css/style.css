@@ -2,7 +2,7 @@
 /************************/
 
 html,body,.container {
-	font-family: 'Barlow', sans-serif;
+	font-family: 'Calibri', sans-serif;
   	position: relative;
     height:100%;
     background-color: #E6E6E6;
@@ -31,8 +31,14 @@ h4{
 }
 
 p {
+	margin: 0px;
 	font-weight: normal;
-	font-size: 12px
+	font-size: 14px
+}
+
+hr {
+	margin-bottom: 2px;
+	margin-top: 2px;
 }
 .container {
     display:table;
@@ -70,7 +76,7 @@ p {
 }
 
 /************************/
-/* D3 Bar Graph Styling */
+/* D3 Mapp Graph Styling */
 /************************/
 
 .dataVisual {
@@ -84,22 +90,69 @@ p {
 
 #viz2_container{
 	height: 100%;
-	margin-bottom: 20px;
-	background-color: #E6E6E6;
-	color: #20252b;
+	background-color: #FFFFFF;
+	color: black;
 	border: .5px solid lightgray;
 	border-radius: 5px;
 	font-weight: bold;
-	padding: 20px 20px 20px 20px;
+	padding: 20px;
 	text-align: left;
 	box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.3), 0 8px 22px 0 rgba(0, 0, 0, 0.2);
 }
 
+path:hover {
+	fill: #c5c6c2;
+	stroke: #6f7376;
+	stroke-width: 1.5px;
+	cursor:pointer;
+}
+
+
+.toolTip {
+  position: absolute;
+  display: none;
+  height: auto;
+  overflow-wrap: normal;
+  background: none repeat scroll 0 0 white;
+  border-radius: 3px;
+  color: black;
+  font-size: 14px;
+  padding: 5px;
+  text-align: left;
+}
+
+.toolTip2 {
+  background-color: #c5c6c2;
+  position: absolute;
+  display: none;
+  height: auto;
+  overflow-wrap: normal;
+  border-radius: 3px;
+  color: black;
+  font-size: 14px;
+  padding: 5px;
+  text-align: left;
+}
+
+#title{
+	font-size: 16px;
+	font-weight: bold;
+}
+
+/************************/
+/* D3 Bar Graph Styling */
+/************************/
 
 #d3_visual2{
 	position: absolute;
-    width: 200px;
+    width: 320px;
+    height: 350px;
     top: 0;
+}
+
+.bar {
+    fill: #2f3740;
+    fill-opacity: .9;
 }
 
 .nv-y .tick line { display: none; }
@@ -113,33 +166,40 @@ p {
 }
 
 .label{
-	font-size: 12px;
-	font-style: normal;
-
+  fill:black;
+  font: 10px;  
+  text-anchor: middle;
 }
 
 
-path:hover {
-	fill:#6f7376;
-	stroke: black;
-	stroke-width: 1.5px;
-	cursor:pointer;
+.value {
+	font-weight: normal;
+    color: white;
+    fill:white;
+    font-size: 12px;
 }
 
 
-
-.toolTip {
-  position: absolute;
-  display: none;
-  height: auto;
-  overflow-wrap: normal;
-  background: none repeat scroll 0 0 white;
-  border-radius: 3px;
-  color: black;
-  font-size: 12px;
-  padding: 5px;
-  text-align: left;
+#barChartHeader {
+	font-family: 'Calibri', sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 5px;
 }
 
+#barChartSubHeader{
+	font-family: 'Calibri', sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	margin-bottom: 5px;
+}
 
+#visualHeader{
+	height: 80px;
+}
 
+#barChart{
+	height: calc(100% - 80px);
+	width: calc(100% - 20px);
+	margin-top: 30px;
+}
