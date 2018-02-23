@@ -3,7 +3,7 @@
 // To create Responsive Visual use BoundingClientRect
 var bbox = d3.select("#d3_visual").node().getBoundingClientRect()
 var width = bbox.width *1.3
-var height = (bbox.height*1) - 30
+var height = (bbox.height*1) - 80
 
 
 
