@@ -1,21 +1,22 @@
 // Retrieve Raw Data from API and reformat
-var dataObject = treeData(rawData)
+
 console.log(titles)
 
 // Set global county code
 var county_code;
 
-function barChartIDClear(event){
+function barChartIDClear(){
 	county_code  = ''
 	$('#viz2_container').remove();
 }
 
-function barChartVisual(event){
 
-	if($('#viz2_container').length){
-		$('#viz2_container').remove();
-	}
-	$('#tooltip2').remove();
+
+
+function barChartVisual(event, rawData){
+	$('#viz2_container').remove();
+
+	var dataObject = treeData(rawData)
 
 	// Retrieve Corresponding county code
     county_code = event.target.id
@@ -48,7 +49,9 @@ function barChartVisual(event){
 		    }
 		  }
 		})
-	
+
+		console.log(data);
+
 		// Removed Enrolled in School total
 		var enrolled_total;
 		for(var i=0; i<data.length; i++){
@@ -56,6 +59,8 @@ function barChartVisual(event){
       	enrolled_total = data.splice(i, 1)
   			}
 		}
+
+		console.log(enrolled_total);
 
 		// Add in % of Total
 		var total = 0;
@@ -86,26 +91,26 @@ function barChartVisual(event){
 
 		// Build Visual
 		$('#d3_visual2').append('<div id="viz2_container"></div>');
+		$('#viz2_container').append('<button onclick="barChartIDClear()" id="close">x</button>')
 		$('#viz2_container').append('<div id="visualHeader"></div>');
 		$('#viz2_container').append('<div id="barChart"></div>');
 		$('#visualHeader').append('<h3 id="barChartHeader">School Enrollment (2015)</h3>')
 		$('#visualHeader').append('<h3 id="barChartSubHeader">' +county_name +' County</h3>'+"<hr/>");
 
-		// $('#visualHeader').append('<h3 id="barChartHeader">' +county_name +' County</h3>')
-		// $('#visualHeader').append('<h3 id="barChartSubHeader">School Enrollment (2015)</h3>'+"<hr/>");
-		$('#visualHeader').append('<p> Of the <strong>'+total.toLocaleString()+' </strong> census respondents in'+county_name+' county, <strong>'+enrolled_percent+'%</strong> reported enrollment with <strong>'+unenrolled_percent+'%</strong> not enrolled.</p>')
+		
+		$('#visualHeader').append('<p> Of the <strong>'+total.toLocaleString()+' </strong> census respondents in '+county_name+' county, <strong>'+enrolled_percent+'%</strong> reported enrollment with <strong>'+unenrolled_percent+'%</strong> not enrolled.</p>')
 
 
 
 		//set up svg using margin 
         var margin = {
             top: 10,
-            right: 5,
+            right: 10,
             bottom: 10,
             left: 0
         };
         var axisMargin = 20,
-        	valueMargin = 4;
+        	valueMargin = 2;
 
         var bbox = d3.select("#barChart").node().getBoundingClientRect()
 		// var width = bbox.width  - margin.left - margin.right,
@@ -114,18 +119,16 @@ function barChartVisual(event){
 		var height2 = (bbox.height) - margin.top - margin.bottom;
 		var width2 = (bbox.width)  - margin.left - margin.right;
 
-		 var svg2 = d3.select("#barChart").append("svg")
+		var svg2 = d3.select("#barChart").append("svg")
 		            .attr("width", width2 + margin.left + margin.right)
 		            .attr("height", height2 + margin.top + margin.bottom)
 		            .append("g")
-		            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+		            // .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 		
 
 		var x = d3.scaleLinear()
 				.range([0, width2])
-				.domain([0, d3.max(data, function (d) {
-                return d.percent;
-            })]);
+				.domain([0, 1]);
 
 		var y = d3.scaleBand()
 				.range([height2, 0])
@@ -184,17 +187,22 @@ function barChartVisual(event){
             .attr("y", function (d) {
                 return y(d.dimension_desc) + y.bandwidth() / 2
             })
-            .attr("dx", -valueMargin) //margin right
+            // .attr("dx", 0) //margin right
             .attr("dy", ".35em") //vertical align middle
-            .attr("text-anchor", "end")
+            // .attr("text-anchor", "end")
             .text(function(d){
                 var html = Math.floor(d.percent*100) + '%'
                 return html;
             })
-            .attr("x", function(d){
-                var width = this.getBBox().width;
-                return Math.max(width + valueMargin, x(d.percent));
-            });
+                        //x position is 3 pixels to the right of the bar
+            .attr("x", function (d) {
+                return x(d.percent) + 3;
+            })
+
+            // .attr("x", function(d){
+            //     var width = this.getBBox().width;
+            //     return Math.max(width + valueMargin, x(d.percent));
+            // });
 
 	  }
 }
