@@ -13,6 +13,7 @@ Dive into Washington state county level census data from 2015. This is an explor
 
 ## Technologies Used
 * Node/Express
+   * Modules: topoJSON - to convert Shape File to topoJSON File
    * Key APIs:
    	 * LiveStores - open source catalog of census data
 * D3
